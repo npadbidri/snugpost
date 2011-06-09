@@ -1,0 +1,136 @@
+<script type="text/javascript">
+$(document).ready(function() {
+    /* Table Sorter */
+    $("#sort-table")
+    .tablesorter({
+        widgets: ['zebra'],
+        headers: {
+                    // assign the secound column (we start counting zero)
+                    0: {
+                        // disable it by setting the property sorter to false
+                        sorter: false
+                    },
+                    // assign the third column (we start counting zero)
+                    6: {
+                        // disable it by setting the property sorter to false
+                        sorter: false
+                    }
+                }
+    })
+
+    .tablesorterPager({container: $("#pager")});
+});
+
+     /* Check all table rows */
+
+var checkflag = "false";
+function check(field) {
+if (checkflag == "false") {
+for (i = 0; i < field.length; i++) {
+field[i].checked = true;}
+checkflag = "true";
+return "check_all"; }
+else {
+for (i = 0; i < field.length; i++) {
+field[i].checked = false; }
+checkflag = "false";
+return "check_none"; }
+}
+
+</script>
+<div class="inner-page-title">
+    <h2>List of all links</h2>
+    <span>Here you can view,parse to posts, and delete all post links.</span>
+</div>
+<div class="hastable">
+        <% if (has_error_msg()) %>
+        <div class="response-msg error ui-corner-all">
+            <span>Error login</span>
+            <%=  getErrorMsg() %>
+        </div>
+         <%
+         end
+            if (has_info_msg()) %>
+            <div class="response-msg success ui-corner-all">
+                <span>Information</span>
+                <%= getInfoMsg() %>
+            </div>
+         <% end %>        
+        <form name="myform" class="pager-form" method="post" action="">
+        <table id="sort-table">
+        <thead>
+        <tr>
+            <th>Link</th>
+            <th>Status</th>
+            <th>Parsed</th>
+            <th style="width:128px">Options</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @rows.each do |row| %>
+        <tr>            
+            <td><%= row.link %></td>
+            <td><% if (row.status==1) %>Accepted
+              <% else %>
+               Not accepted
+             <%  end %></td>
+            <td><% if (row.parsed==1) %>Yes <% else %>No<% end %></td>
+            <td>
+                <a class="btn_no_text btn ui-state-default ui-corner-all tooltip" title="Accept" href="<%= url_for(:controller => 'links',:action=>"accept",:id=>row.id) %>">
+                    <span class="ui-icon ui-icon-wrench">Accept</span>
+                </a>
+                <a class="btn_no_text btn ui-state-default ui-corner-all tooltip" title="Try to parse the link" href="<%= url_for(:controller => 'links',:action=>"parse",:id=>row.id) %>">
+                    <span class="ui-icon ui-icon-circle-close">Parse</span>
+                </a>
+            </td>
+        </tr>
+        <% end %>
+        </tbody>
+        </table>
+        <div id="pager">
+                <a class="btn_no_text btn ui-state-default ui-corner-all first" title="First Page" href="#">
+                    <span class="ui-icon ui-icon-arrowthickstop-1-w"></span>
+                </a>
+                <a class="btn_no_text btn ui-state-default ui-corner-all prev" title="Previous Page" href="#">
+                    <span class="ui-icon ui-icon-circle-arrow-w"></span>
+                </a>
+
+                <input type="text" class="pagedisplay"/>
+                <a class="btn_no_text btn ui-state-default ui-corner-all next" title="Next Page" href="#">
+                    <span class="ui-icon ui-icon-circle-arrow-e"></span>
+                </a>
+                <a class="btn_no_text btn ui-state-default ui-corner-all last" title="Last Page" href="#">
+                    <span class="ui-icon ui-icon-arrowthickstop-1-e"></span>
+                </a>
+                <select class="pagesize">
+                    <option value="10" selected="selected">10 results</option>
+                    <option value="20">20 results</option>
+                    <option value="30">30 results</option>
+                    <option value="40">40 results</option>
+                </select>
+        </div>
+    </form>
+    <i class="note">Sort multiple columns simultaneously by holding down the shift key and clicking a second, third or even fourth column header!</i>
+</div>
+<div id="sidebar">
+    <div class="sidebar-content">
+        <a id="close_sidebar" class="btn ui-state-default full-link ui-corner-all" href="#drill">
+            <span class="ui-icon ui-icon-circle-arrow-e"></span>
+            Close Sidebar
+        </a>
+        <a id="open_sidebar" class="btn tooltip ui-state-default full-link icon-only ui-corner-all" title="Open Sidebar" href="#"><span class="ui-icon ui-icon-circle-arrow-w"></span></a>
+        <div class="hide_sidebar">
+            <div class="portlet ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+                <div class="portlet-header ui-widget-header">List posts<span class="ui-icon ui-icon-circle-arrow-s"></span></div>
+                <div class="portlet-content">
+                    <ul id="style-switcher" class="side-menu">
+                        <li>
+                            <a class="set_theme" id="black_rose" href="<%= url_for(:controller=>"posts",:action=>"index") %>" title="List posts">List posts</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>

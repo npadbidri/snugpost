@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Snugpost administration</title>
+        <%= javascript_include_tag  "jquery-1.4.4.min.js" %>
+        <%= javascript_include_tag  "admin/ui/ui.core.js" %>
+        <%= javascript_include_tag  "admin/superfish.js" %>
+        <%= javascript_include_tag  "admin/live_search.js" %>
+        <%= javascript_include_tag  "admin/tooltip.js" %>
+        <%= javascript_include_tag  "admin/cookie.js" %>
+        <%= javascript_include_tag  "admin/ui/ui.sortable.js" %>
+        <%= javascript_include_tag  "admin/ui/ui.draggable.js" %>
+        <%= javascript_include_tag  "admin/ui/ui.resizable.js" %>
+        <%= javascript_include_tag  "admin/ui/ui.dialog.js" %>
+        <%= javascript_include_tag  "admin/ui/ui.datepicker.js" %>
+        <%= javascript_include_tag  "admin/custom.js" %>
+        <%= javascript_include_tag  "admin/tablesorter.js" %>
+        <%= javascript_include_tag  "admin/tablesorter-pager.js" %>
+        <%= javascript_include_tag  "jquery.validate.min.js" %>
+        <%= stylesheet_link_tag "admin/styles.css" %>
+        <%= stylesheet_link_tag "admin/css/ui/ui.base.css" %>
+        <%= stylesheet_link_tag "admin/css/ui/ui.base.css" %>
+        <% if !isAdminLogged %>
+        <%= stylesheet_link_tag "admin/css/ui/ui.login.css" %>
+        <% else %>
+        <%= stylesheet_link_tag "admin/css/themes/gray_lightness/ui.css" %>
+        <% end %>
+	<!--[if IE 6]>
+	<link href="css/ie6.css" rel="stylesheet" media="all" />
+	<%= javascript_include_tag  "admin/pngfix.js" %>
+	<script>
+	  /* Fix IE6 Transparent PNG */
+	  DD_belatedPNG.fix('.logo, ul#dashboard-buttons li a, .response-msg, #search-bar input');
+
+	</script>
+	<![endif]-->
+</head>
+<body>
+  <div id="page_wrapper">
+  <% if !isAdminLogged %>
+    <div id="page-header">
+        <div id="page-header-wrapper">
+            <div id="top"><a title="Snugpost administration" class="logo" href="#"></a>
+            </div>
+        </div>
+    </div>
+   <% else
+   @admin=getLoggedAdmin()
+   %>
+     <div id="page-header">
+            <div id="page-header-wrapper">
+                <div id="top">
+                    <div id="top"><a title="Snugpost administration" class="logo" href="<%= url_for(:action => 'index', :controller => 'admins') %>"></a>
+                    <div class="welcome">
+                        <span class="note">Welcome, <%= @admin.username %></span>
+                        <a class="btn ui-state-default ui-corner-all" href="<%= url_for(:action => 'account', :controller => 'admins') %>">
+                            <span class="ui-icon ui-icon-person"></span>
+                            My account
+                        </a>
+                        <a class="btn ui-state-default ui-corner-all" href="<%= url_for(:action => 'logout', :controller => 'admins') %>">
+                            <span class="ui-icon ui-icon-power"></span>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+                <ul id="navigation">
+                    <li>
+                        <a href="<%= url_for(:controller => 'admins') %>" class="sf-with-ul">Dashboard</a>
+                        <ul>
+                            <li><a href="<%= url_for(:controller => 'links',:action=>"index") %>">List links</a></li>
+                            <li><a href="<%= url_for(:controller => 'posts',:action=>"index") %>">List posts</a></li>
+                            <li><a href="<%= url_for(:controller => 'admins',:action=>"administrators") %>">Administrators</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+     </div>
+   <% end %>
+      <div id="page-layout">
+            <div id="page-content">
+                <div id="page-content-wrapper">
+                  <%= yield %>
+                    <div class="clear"></div>
+                </div><!-- id="page-layout" -->
+            </div> <!-- id="page-content" -->
+      </div> <!-- id="page-content-wrapper" -->
+  </div> <!-- page_wrapper-->
+</body>
+</html>

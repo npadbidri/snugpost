@@ -1,0 +1,27 @@
+.thumbnail img
+{
+    display: block;
+    height: 106px;
+    width: 125px;
+}
+.thumbnail-box
+{
+    width: 350px;
+    height: 150px;
+    overflow: auto;
+    display: block;
+}
+.thumbnail-preview
+{
+ display: inline-block;   
+ margin: 3px;
+}
+.thumbnail-preview img
+{
+    cursor: pointer;
+}
+.thumbnail-preview img.active
+{
+    border:2px solid #f00000;
+    cursor: pointer;
+}

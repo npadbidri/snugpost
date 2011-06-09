@@ -1,0 +1,17 @@
+<% @rows.each do |row| %>
+<div class="post">
+  <div class="post-image">
+   <% if !row.image.empty? %>
+      <%= image_tag row.image %>
+    <% else %>
+      <%= image_tag "nopostimage.png" %>
+    <% end %>
+  </div>
+  <div class="post-wrapper">
+    <div class="post-title"><%= raw(row.title) %></div>
+    <div class="post-date">Published: <%= raw(row.publication_date) %></div>
+    <div class="post-desc"><%= raw(row.description) %></div>
+    <div class="post-link">Read more on: <%= link_to raw(row.title),row.link ,{:class=>"post-links"} %></div>
+ </div>
+  </div>
+<% end %>

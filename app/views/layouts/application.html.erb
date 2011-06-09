@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Snugpost</title>
+  <meta name="keyword" content="snugpost, rss feeds" >
+  <meta name="description" content="Snugpost" >
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon" />
+  <%= stylesheet_link_tag "styles" %>
+  <%= javascript_include_tag "jquery-1.4.4.min.js" %>
+  <%= javascript_include_tag "jquery.validate.min.js" %>
+  <%= javascript_include_tag "utils.js" %>
+</head>
+<body class="pg_body">
+   <div class="content">
+	   <div class="header">
+	   		<div class="search-bar">
+		   		<form method="post" action="<%= root_url %>search" id="frmsearch" >
+		   			<input type="text" id="search" name="search" value="search...">
+		   		</form>
+	   		</div>
+		   	<div class="logo">
+		   	</div>
+		   	<div class="text-logo">
+		   	</div>
+             <div class="top-menu">
+               <%= link_to "Contact Us","contact",{:class=>"menu",:title=>"Contact Us"} %>
+             </div>
+	   </div>
+          <% if (has_error_msg()) %>
+            <ul><li class="error"><%=  getErrorMsg() %></li></ul>
+         <%
+            end
+            if (has_info_msg()) %>
+         <ul><li class="success"><%= getInfoMsg() %></li></ul>
+         <% end %>
+         <%= yield %>
+	</div>
+</body>
+</html>

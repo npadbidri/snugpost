@@ -1,0 +1,34 @@
+<div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+<div id="login" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+   <% if (has_error_msg()) %>
+   <div class="response-msg error ui-corner-all">
+        <span>Error login</span>
+        <%=  getErrorMsg() %>
+    </div>
+   <% end %>
+   <%= form_tag({:controller => "adminlogin", :action => "auth"}, :method => "post",:id=>"frmlogin") do %>
+        <ul>
+            <li>
+              <%= label_tag :username, "Username",:class=>"desc" %>
+                <div>
+                    <%= text_field_tag(:username,"",:class=>"field text full required",:id=>"username") %>
+                </div>
+            </li>
+            <li>
+              <%= label_tag :password, "Password",:class=>"desc" %>
+              <div>
+                <%= password_field_tag(:password,"", :class=>"field text full required",:id=>"password") %>
+              </div>
+            </li>
+            <li class="buttons">
+                <div>
+                  <%= submit_tag "Login",:class=>"ui-state-default ui-corner-all float-right ui-button" %>
+                </div>
+            </li>
+        </ul>
+    <% end %>
+</div>
+</div>
+<script type="text/javascript">
+    $("#frmlogin").validate();
+</script>
