@@ -16,6 +16,8 @@ Snugpost::Application.routes.draw do
   match 'admins/administrators' => 'admins#administrators'
   match 'adminlogin/auth' => 'adminlogin#auth'
   match 'search'=>'search#index'
+  match 'contact'=>'contact#index'
+  match 'contact/send'=>'contact#sendemail'
   #match "admins/:name" => "admins#%{name}"
   # The priority is based upon order of creation:
   # first created -> highest priority.

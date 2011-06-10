@@ -1,0 +1,65 @@
+<div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+<div id="login" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+   <% if (has_error_msg()) %>
+   <div class="response-msg error ui-corner-all">
+        <span>Error</span>
+        <%=  getErrorMsg() %>
+    </div>
+   <% end %>
+   <%= form_tag({:controller => "contact", :action => "sendemail"}, :method => "post",:id=>"frmcontact") do %>
+    <h2>You can send us links for rss feeds to publish on our site.</h2>
+        <ul>
+          <li>
+              <%= label_tag :link1, "Link 1",:class=>"desc" %>
+                <div>
+                    <%= text_field_tag(:link1,"",:class=>"field text full",:id=>"link1") %>
+                </div>
+            </li>
+            <li>
+              <%= label_tag :link1, "Link 2",:class=>"desc" %>
+                <div>
+                    <%= text_field_tag(:link2,"",:class=>"field text full",:id=>"link2") %>
+                </div>
+            </li>
+            <li>
+              <%= label_tag :link1, "Link 3",:class=>"desc" %>
+                <div>
+                    <%= text_field_tag(:link3,"",:class=>"field text full",:id=>"link3") %>
+                </div>
+            </li>
+            <li>
+              <%= label_tag :name, "Your name",:class=>"desc" %>
+                <div>
+                    <%= text_field_tag(:name,"",:class=>"field text full required",:id=>"name") %>
+                </div>
+            </li>
+            <li>
+              <%= label_tag :email, "Email",:class=>"desc" %>
+                <div>
+                    <%= text_field_tag(:email,"",:class=>"field text full required email",:id=>"email") %>
+                </div>
+            </li>
+            <li>
+              <%= label_tag :subject, "subject",:class=>"desc" %>
+                <div>
+                    <%= text_field_tag(:subject,"",:class=>"field text full required",:id=>"subject") %>
+                </div>
+            </li>
+            <li>
+              <%= label_tag :message, "Message",:class=>"desc" %>
+                <div>
+                    <%= text_area("", :message,:cols => 45, :rows => 20,:id=>"message",:class=>"field text full required") %>
+                </div>
+            </li>
+            <li class="buttons">
+                <div>
+                  <%= submit_tag "Send message",:class=>"ui-state-default ui-corner-all float-right ui-button" %>
+                </div>
+            </li>
+        </ul>
+    <% end %>
+</div>
+</div>
+<script type="text/javascript">
+    $("#frmcontact").validate();
+</script>
