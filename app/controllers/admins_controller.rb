@@ -15,11 +15,34 @@ class AdminsController < ApplicationController
   def listlinks
     redirect_to(:controller=>"links")
   end
+  def account
+    @admin=getLoggedAdmin()
+  end
+  def saveaccount
+    @admin=getLoggedAdmin()
+    if Admin.can_save_info(params[:username],@admin.id)
+      setErrorMsg("There's already an administrator with the same given username.")
+      redirect_to(:controller=>"admins",:action=>"account")
+    else
+     if (params[:oldpassword]!="" && Digest::SHA1.hexdigest(params[:oldpassword])!=@admin.password)
+      setErrorMsg("Old password is incorrect.")
+      redirect_to(:controller=>"admins",:action=>"account")
+     else
+       if params[:password]!=""
+         @admin.password=Digest::SHA1.hexdigest(params[:password])
+       end
+       @admin.username=params[:username]
+       Admin.update(@admin.id,:username => @admin.username,:password=>@admin.password)
+       adminlogin(@admin.username)
+       setInfoMsg("Your information is successfully saved.")
+       redirect_to(:controller=>"admins",:action=>"show")
+     end
+    end
+  end
   # GET /admins/1
   # GET /admins/1.xml
   def show
-    @admin = Admin.find(params[:id])
-
+    @rows = Admin.all
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @admin }
@@ -29,12 +52,6 @@ class AdminsController < ApplicationController
   # GET /admins/new
   # GET /admins/new.xml
   def new
-    @admin = Admin.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @admin }
-    end
   end
 
   # GET /admins/1/edit
@@ -45,44 +62,41 @@ class AdminsController < ApplicationController
   # POST /admins
   # POST /admins.xml
   def create
-    @admin = Admin.new(params[:admin])
-
-    respond_to do |format|
-      if @admin.save
-        format.html { redirect_to(@admin, :notice => 'Admin was successfully created.') }
-        format.xml  { render :xml => @admin, :status => :created, :location => @admin }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @admin.errors, :status => :unprocessable_entity }
-      end
+    if Admin.admin_exists(params[:username])
+      setErrorMsg("There's already an administrator with the same given username.")
+      redirect_to(:controller=>"admins",:action=>"new")
     end
+    Admin.create(:username=>params[:username],:password=>Digest::SHA1.hexdigest(params[:password]))
+    setInfoMsg("Administrator is saved successfully.")
+    redirect_to(:controller=>"admins",:action=>"show")
   end
 
   # PUT /admins/1
   # PUT /admins/1.xml
   def update
     @admin = Admin.find(params[:id])
-
-    respond_to do |format|
-      if @admin.update_attributes(params[:admin])
-        format.html { redirect_to(@admin, :notice => 'Admin was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @admin.errors, :status => :unprocessable_entity }
-      end
+    if Admin.can_save_info(params[:username],@admin.id)
+      setErrorMsg("There's already an administrator with the same given username.")
+      redirect_to(:controller=>"admins",:action=>"edit",:id=>@admin.id)
     end
+    if (params[:password]!="")
+      @admin.password=Digest::SHA1.hexdigest(params[:password])
+    end
+    Admin.update(@admin.id,:username => @admin.username,:password=>@admin.password)
+    setInfoMsg("Administrator is saved successfully.")
+    redirect_to(:controller=>"admins",:action=>"show")
   end
 
   # DELETE /admins/1
   # DELETE /admins/1.xml
   def destroy
+    @l=getLoggedAdmin()
     @admin = Admin.find(params[:id])
-    @admin.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(admins_url) }
-      format.xml  { head :ok }
+    if @l.id==@admin.id
+      setErrorMsg("You cannot delete yourself")
+    else
+      @admin.destroy
     end
+    redirect_to(:controller=>"admins",:action=>"show")
   end
 end
