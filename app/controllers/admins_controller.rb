@@ -96,6 +96,7 @@ class AdminsController < ApplicationController
       setErrorMsg("You cannot delete yourself")
     else
       @admin.destroy
+      setInfoMsg("Administrator has been deleted successfully.")
     end
     redirect_to(:controller=>"admins",:action=>"show")
   end

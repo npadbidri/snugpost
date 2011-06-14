@@ -6,25 +6,24 @@
         <%= getErrorMsg() %>
     </div>
    <% end %>
-   <%=  form_tag({:controller => "admins", :action => "create"}, :method => "post",:id=>"frmaccount") do %>
-  <input type="hidden" id="id" name="id" value="<%= @admin.id %>" />
+   <%=  form_tag({:controller => "admins", :action => "create"}, :method => "post",:id=>"frmaccount") do %>  
         <ul>
             <li>
               <%= label_tag :username, "Username",:class=>"desc" %>
                 <div>
-                    <%= text_field_tag(:username,@admin.username,:class=>"field text full required",:id=>"username") %>
+                    <%= text_field_tag(:username,"",:class=>"field text full required",:id=>"username") %>
                 </div>
             </li>
             <li>
               <%= label_tag :password, "New password",:class=>"desc" %>
               <div>
-                <%= password_field_tag(:password,"", :class=>"field text full",:id=>"password") %>
+                <%= password_field_tag(:password,"", :class=>"field text full required",:id=>"password") %>
               </div>
             </li>
             <li>
               <%= label_tag :confirmedpassword, "Confirmed new password",:class=>"desc" %>
               <div>
-                <%= password_field_tag(:confirmedpassword,"", :class=>"field text full",:id=>"confirmedpassword") %>
+                <%= password_field_tag(:confirmedpassword,"", :class=>"field text full required",:id=>"confirmedpassword") %>
               </div>
             </li>
             <li class="buttons">

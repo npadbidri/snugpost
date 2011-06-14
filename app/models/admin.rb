@@ -4,7 +4,7 @@ class Admin < ActiveRecord::Base
     return (t[0].num.to_i>0)
   end
   def Admin.admin_exists(username)
-    t=Admin.find_by_sql("select count(*) num from admins where username='"+username+")
+    t=Admin.find_by_sql("select count(*) num from admins where username='"+username+"'")
     return (t[0].num.to_i>0)
   end
 end
