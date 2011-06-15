@@ -1,5 +1,34 @@
-<h1>New link</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', links_path %>
+<div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+<div id="login" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+   <% if (has_error_msg()) %>
+   <div class="response-msg error ui-corner-all">
+        <span>Error</span>
+        <%= getErrorMsg() %>
+    </div>
+   <% end %>
+   <%=  form_tag({:controller => "links", :action => "create"}, :method => "post",:id=>"frmlink") do %>
+        <ul>
+            <li>
+              <%= label_tag :link, "Link URL",:class=>"desc" %>
+                <div>
+                    <%= text_field_tag(:link,"",:class=>"field text full required",:id=>"link") %>
+                </div>
+            </li>
+            <li>
+              <label for="parsed">Parse it after saving</label>
+              <div>
+                <input type="checkbox" id="parsed" name="parsed" value="1" />Yes/No
+              </div>
+            </li>            
+            <li class="buttons">
+                <div>
+                  <button type="submit" class="ui-state-default ui-corner-all float-right ui-button">Save</button>
+                </div>
+            </li>
+        </ul>
+    <% end %>
+</div>
+</div>
+<script type="text/javascript">
+    $("#frmlink").validate();
+</script>

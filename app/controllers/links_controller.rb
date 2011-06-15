@@ -39,13 +39,7 @@ class LinksController < ApplicationController
   end
   # GET /links/new
   # GET /links/new.xml
-  def new
-    @link = Link.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @link }
-    end
+  def new    
   end
 
   # GET /links/1/edit
@@ -56,17 +50,21 @@ class LinksController < ApplicationController
   # POST /links
   # POST /links.xml
   def create
-    @link = Link.new(params[:link])
-
-    respond_to do |format|
+    @link = Link.new(:link=>params[:link],:status=>1,:parsed=>params[:parsed].to_i)
       if @link.save
-        format.html { redirect_to(@link, :notice => 'Link was successfully created.') }
-        format.xml  { render :xml => @link, :status => :created, :location => @link }
+        if params[:parsed].to_i==1
+         data=ParseRss.new(params[:link]).parse()
+         t=Link.insert_parsed_links(data)
+          if t
+            setInfoMsg("Link has been successfully saved, and "+t.to_s+" posts have been added.")
+          end          
+        else
+            setInfoMsg("Link has been successfully saved.")
+        end
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @link.errors, :status => :unprocessable_entity }
+        setErrorMsg("There's been an error saving link.")
       end
-    end
+      redirect_to(:controller=>"links")
   end
 
   # PUT /links/1

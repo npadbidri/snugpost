@@ -124,6 +124,9 @@ return "check_none"; }
                 <div class="portlet-header ui-widget-header">List posts<span class="ui-icon ui-icon-circle-arrow-s"></span></div>
                 <div class="portlet-content">
                     <ul id="style-switcher" class="side-menu">
+                         <li>
+                            <a class="set_theme" id="black_rose" href="<%= url_for(:controller=>"links",:action=>"new") %>" title="Add new link feed">Add new link feed</a>
+                        </li>
                         <li>
                             <a class="set_theme" id="black_rose" href="<%= url_for(:controller=>"posts",:action=>"index") %>" title="List posts">List posts</a>
                         </li>
