@@ -1,0 +1,60 @@
+<div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+<div id="login" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+   <% if (has_error_msg()) %>
+   <div class="response-msg error ui-corner-all">
+        <span>Error</span>
+        <%= getErrorMsg() %>
+    </div>
+   <% end %>  
+   <%=  form_tag({:controller => "admins", :action => "saveaccount"}, :method => "post",:id=>"frmaccount") do %>
+        <ul>
+            <li>
+              <%= label_tag :username, "Username",:class=>"desc" %>
+                <div>
+                    <%= text_field_tag(:username,@admin.username,:class=>"field text full required",:id=>"username") %>
+                </div>
+            </li>
+            <li>
+              <%= label_tag :oldpassword, "Old password",:class=>"desc" %>
+              <div>
+                <%= password_field_tag(:oldpassword,"", :class=>"field text full",:id=>"oldpassword") %>
+              </div>
+            </li>
+            <li>
+              <%= label_tag :password, "New password",:class=>"desc" %>
+              <div>
+                <%= password_field_tag(:password,"", :class=>"field text full",:id=>"password") %>
+              </div>
+            </li>
+            <li>
+              <%= label_tag :confirmedpassword, "Confirmed new password",:class=>"desc" %>
+              <div>
+                <%= password_field_tag(:confirmedpassword,"", :class=>"field text full",:id=>"confirmedpassword") %>
+              </div>
+            </li>
+            <li class="buttons">
+                <div>
+                  <button type="button" onclick="_submit();" class="ui-state-default ui-corner-all float-right ui-button">Save</button>
+                </div>
+            </li>
+        </ul>
+    <% end %>
+</div>
+</div>
+<script type="text/javascript">
+  function _submit()
+  {
+    if ($("#password").val()!="" && $("#oldpassword").val()=="")
+    {
+      alert("You must enter old password.");
+      return false;
+    }
+    if ($("#password").val()!=$("#confirmedpassword").val())
+    {
+      alert("Confirmed password must be same as new password.");
+      return false;
+    }
+    $("#frmaccount").submit();
+  }
+    $("#frmaccount").validate();
+</script>
