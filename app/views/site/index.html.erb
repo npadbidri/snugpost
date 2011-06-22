@@ -1,17 +1,94 @@
-<% @rows.each do |row| %>
-<div class="post">
-  <div class="post-image">
-   <% if !row.image.empty? %>
-      <%= image_tag row.image %>
-    <% else %>
-      <%= image_tag "nopostimage.png" %>
-    <% end %>
-  </div>
-  <div class="post-wrapper">
+<table cellpadding="0" cellspacing="0" border="0">
+  <tr>
+  <% i=0
+     r=1
+     rownum=0
+     while rownum<@rows.count do
+       row=@rows[rownum]       
+    if i>2
+      i=0
+      r+=1
+      %>
+    </tr><tr>
+    <%      
+    end
+    i+=1
+  %>      
+  <% if ((r==1 || r==2) && i>2)
+      if r==1 && i>2
+      %>
+        <td class="post-cell-last" rowspan="2" valign="top"><%= render "shared/ads"  %></td>
+      <%
+      end
+      next
+    end
+  %>
+  <td class="post-cell<%= "-last" if i>2  %>">
+  <div class="post">
     <div class="post-title"><%= raw(row.title) %></div>
-    <div class="post-date">Published: <%= raw(row.publication_date) %></div>
-    <div class="post-desc"><%= raw(row.description) %></div>
-    <div class="post-link">Read more on: <%= link_to raw(row.title),row.link ,{:class=>"post-links"} %></div>
- </div>
-  </div>
-<% end %>
+      <div class="post-image">
+       <% if !row.image.empty? %>
+          <%= image_tag row.image %>
+        <% end %>
+      </div>
+      <div class="post-wrapper">        
+        <div class="post-desc"><%= raw(row.description[0,150]) %>...</div>        
+     </div>
+    <div class="post-link"><%= link_to "Read more",row.link ,{:class=>"post-links read-more"} %></div>
+   </div>
+  </td>
+  <%  
+  rownum+=1
+  end %>
+</table>
+<div class="youtube-posts">
+  <span class="youtube-title">Youtube most popular</span>
+  <table>
+  <tr>
+  <%
+  i=0
+  while i<4 do
+    v=@yt[i]
+    i+=1
+    %>
+    <td><span class="video-title"><%= v[:title]  %></span></td>
+  <% end %>
+  </tr>
+  <tr>
+   <%
+  i=0
+  while i<4 do
+    v=@yt[i]
+    i+=1
+    %>
+  <td>
+    <div class="video-post<%= "-last" if i==4 %>">
+      <iframe width="210" height="149" src="http://www.youtube.com/embed/<%= v[:link].slice(v[:link].index("?v=")+3,v[:link].length-(v[:link].index("?v=")+3)) %>" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </td>
+  <%
+  end
+  %>
+  </tr>
+  </table>
+</div>
+<div class="flickr-posts" id="flickr-posts">
+    <span class="flickr-title">Flickr latest</span>
+    <div ></div>
+</div>
+<script type="text/javascript">
+ 
+$('#flickr-posts div').jflickrfeed({
+	flickrbase: 'http://api.flickr.com/services/feeds/',
+        feedapi: 'photos_public.gne',
+	limit: 11,
+	qstrings: {
+
+	},
+	itemTemplate:
+	'<div class="flickr-img">' +
+		'<a target="_blank" class="flickr-photo" href="{{link}}" title="{{title}}"><img src="{{image_s}}" alt="{{title}}" /></a>' +
+	'</div>'
+});
+
+</script>

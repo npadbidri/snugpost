@@ -80,4 +80,22 @@ class ParseRss
 		end
 		data		
 	end
+  def ParseYoutTube
+    @content = Net::HTTP.get(URI.parse(@url))
+#  reader = Nokogiri::XML::Reader(@content)
+  # doc = Nokogiri::XML(@content)
+		xml = REXML::Document.new(@content)
+
+		#data['title'] = xml.root.elements['channel/title'].text
+		#data['home_url'] = xml.root.elements['channel/link'].text
+		#data['rss_url'] = @url
+    data=[]
+    xml.elements.each('//entry') do |item|
+			it = {}
+      it[:title] =item.elements['title'].text
+			it[:link] =item.elements['link'].attributes['href'].sub("&feature=youtube_gdata","")
+			data << it
+		end
+		data
+  end
 end

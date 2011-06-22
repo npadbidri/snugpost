@@ -114,17 +114,25 @@ label.error {
 }
 .post-wrapper
 {
+    vertical-align: top;
     display:inline-block;
+    width: 215px;
+    margin-bottom: 8px;
 }
 .post-image img
 {
     float:left;
+    width:80px;
+    height:80px;
+
 }
 .post-image
 {
     vertical-align: top;
     display:inline-block;
-    margin-right: 3px;
+    padding-right: 3px;
+    float: left;
+    width: 80px;
 }
 .title
 {
@@ -141,28 +149,108 @@ label.error {
 .post-desc
 {
     display:block;
-    width:600px;
+    color: #999999;
 }
 .post-link
 {
     font-weight: bold;
     display:block;
+    vertical-align: bottom;
 }
 a.post-links
 {
-    font-weight: normal;
-    font-size:11px;
-    color:#8F8F8F;
+    font-weight: bold;
+    font-size:12px;
+    color:#36cf7e;
     text-decoration: none;
+    padding-left: 15px;
+    background: url("../images/read-more.png") no-repeat;
+    background-position: left center;
 }
 .post
 {
     margin-bottom: 5px;
     padding-bottom: 10px;
     display: block;
+    width:300px;
 }
 .post-date
 {
     font-style: italic;
     color:#8F8F8F;
+}
+.youtube-posts
+{
+    display:block;
+    margin-top: 10px;
+}
+.video-post
+{
+    width:210px;
+    height:149px;
+    display:inline-block;
+    float: left;
+    margin-right:8px;
+}
+.video-post-last
+{
+    width:210px;
+    height:149px;
+    display:inline-block;
+    float: left;
+
+}
+.video-title
+{
+    font-weight: bold;
+    font-size: 12px;
+    color:#000;
+    display: block;
+}
+.youtube-title
+{
+    display: block;
+    background: #f86900;
+    color:#fff;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 30px;
+    padding-left: 5px;
+    width: 250px;
+
+}
+.post-cell
+{
+    border-bottom: 1px dotted #ccc;
+    border-right: 1px dotted #ccc;
+    padding: 5px;
+}
+.post-cell-last
+{
+    border-bottom: 1px dotted #ccc;
+    padding: 5px;
+}
+.flickr-posts
+{
+    display: block;
+    margin-top: 10px;
+}
+.flickr-title
+{
+    display: block;
+    background: #0063dc;
+    color:#fff;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 30px;
+    padding-left: 5px;
+    width: 250px;
+
+}
+.flickr-img
+{
+    display: inline-block;
+    float: left;
+    margin-top: 5px;
+    margin-right: 5px;
 }
