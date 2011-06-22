@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
   layout 'admin'
-  before_filter:checkLogin  
+  before_filter:checkAdminLogin
   def index
     @rows = Link.all
 
@@ -13,10 +13,10 @@ class LinksController < ApplicationController
     @link=Link.find(params[:id])
     if @link
       Link.accept_link(params[:id])
-      setInfoMsg("Link is succesfully accepted")
+      flash[:notice]="Link is succesfully accepted"
       redirect_to(:controller=>"links")
     else
-      setErrorMsg("Link doesn't exist")
+      flash[:alert]="Link doesn't exist"
       redirect_to(:controller=>"links")
     end
   end
@@ -27,12 +27,12 @@ class LinksController < ApplicationController
        data=ParseRss.new(@link.link).parse()
       t=Link.insert_parsed_links(data)
       if t
-        setInfoMsg(t.to_s+' post successfully parsed.')
+        flash[:notice]=t.to_s+' post successfully parsed.'
       end
        Link.parsed_link(@link.id)
        redirect_to(:controller=>"links")
       else
-        setErrorMsg("Link is already parsed.")
+        flash[:alert]="Link is already parsed."
         redirect_to(:controller=>"links")
       end
     end
@@ -56,13 +56,13 @@ class LinksController < ApplicationController
          data=ParseRss.new(params[:link]).parse()
          t=Link.insert_parsed_links(data)
           if t
-            setInfoMsg("Link has been successfully saved, and "+t.to_s+" posts have been added.")
+            flash[:notice]="Link has been successfully saved, and "+t.to_s+" posts have been added."
           end          
         else
-            setInfoMsg("Link has been successfully saved.")
+          flash[:alert]="Link has been successfully saved."
         end
       else
-        setErrorMsg("There's been an error saving link.")
+        flash[:alert]="There's been an error saving link."
       end
       redirect_to(:controller=>"links")
   end

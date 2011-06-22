@@ -6,3 +6,4 @@ SITE_EMAIL= 'pasicmesud@gmail.com'
 Snugpost::Application.initialize!
 ActionMailer::Base.delivery_method = :sendmail
 ActionMailer::Base.default_content_type = "text/html"
+ 

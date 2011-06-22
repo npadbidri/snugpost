@@ -15859,3 +15859,754 @@ Started GET "/" for 127.0.0.1 at 2011-06-22 11:47:34 +0200
 Rendered shared/_ads.html.erb (0.7ms)
 Rendered site/index.html.erb within layouts/application (15.3ms)
 Completed 200 OK in 1771ms (Views: 18.2ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 12:43:49 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.4ms)
+Rendered site/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 1755ms (Views: 18.5ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+
+
+Started GET "/user/sign_up" for 127.0.0.1 at 2011-06-22 14:04:55 +0200
+
+ActionController::RoutingError (No route matches "/user/sign_up"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/user/s" for 127.0.0.1 at 2011-06-22 14:05:03 +0200
+
+ActionController::RoutingError (No route matches "/user/s"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/user/" for 127.0.0.1 at 2011-06-22 14:05:05 +0200
+
+ActionController::RoutingError (No route matches "/user"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 14:12:58 +0200
+  Processing by SiteController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  select * from posts order by publication_date desc limit 12
+Rendered shared/_ads.html.erb (0.5ms)
+Rendered site/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 4236ms (Views: 18.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 14:17:01 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.5ms)
+Rendered site/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 3565ms (Views: 16.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2011-06-22 14:17:12 +0200
+
+ActionController::RoutingError (No route matches "/user/sign_in"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (152.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (200.5ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateAdmins (20110530100337)
+  [1m[35mSQL (0.2ms)[0m  CREATE TABLE `admins` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+Mysql::Error: Table 'admins' already exists: CREATE TABLE `admins` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateAdmins (20110530100337)
+  [1m[35mSQL (0.4ms)[0m  CREATE TABLE `admins` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+Mysql::Error: Table 'admins' already exists: CREATE TABLE `admins` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreateAdmins (20110530100337)
+  [1m[35mSQL (0.4ms)[0m  CREATE TABLE `admins` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+Mysql::Error: Table 'admins' already exists: CREATE TABLE `admins` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20110622115931)
+  [1m[35mSQL (123.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (210.6ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (234.1ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36mSQL (41.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110622115931')[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `admins`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `admins`
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `links`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `links`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `posts`[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `posts`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 14:31:53 +0200
+  Processing by SiteController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  select * from posts order by publication_date desc limit 12
+Rendered shared/_ads.html.erb (0.6ms)
+Rendered site/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 3231ms (Views: 16.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/user/sign_in" for 127.0.0.1 at 2011-06-22 14:37:45 +0200
+
+ActionController::RoutingError (No route matches "/user/sign_in"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2011-06-22 14:38:04 +0200
+  Processing by Devise::SessionsController#new as HTML
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (1.6ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/sessions/new.html.erb within layouts/application (170.9ms)
+Completed 200 OK in 195ms (Views: 175.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2011-06-22 14:38:08 +0200
+  Processing by Devise::PasswordsController#new as HTML
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (1.5ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/passwords/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 56ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2011-06-22 14:38:10 +0200
+  Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mTOQOhyiWVXVmatRFLmpMJnGQmzxA3SNIYWPtAGD6N4=", "user"=>{"email"=>""}, "commit"=>"Send me reset password instructions"}
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (1.6ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/passwords/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 34ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2011-06-22 14:38:17 +0200
+  Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mTOQOhyiWVXVmatRFLmpMJnGQmzxA3SNIYWPtAGD6N4=", "user"=>{"email"=>"sadsa@hotmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`email` = 'sadsa@hotmail.com' LIMIT 1
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (1.4ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/passwords/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 169ms (Views: 11.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2011-06-22 14:38:21 +0200
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/shared/_links.erb (1.5ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/devise-1.3.4/app/views/devise/registrations/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 32ms (Views: 21.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 14:38:28 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.6ms)
+Rendered site/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 3565ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 14:43:29 +0200
+  Processing by SiteController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  select * from posts order by publication_date desc limit 12
+Rendered shared/_ads.html.erb (0.4ms)
+Rendered site/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 1773ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-06-22 14:43:34 +0200
+  Processing by AdminsController#index as HTML
+Completed   in 1ms
+
+NameError (undefined local variable or method `user_signed_in' for #<AdminsController:0xabcf868>):
+  app/controllers/application_controller.rb:4:in `checkAdminLogin'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:8)
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-06-22 14:46:54 +0200
+  Processing by AdminsController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-06-22 14:46:54 +0200
+  Processing by AdminloginController#index as HTML
+Rendered adminlogin/index.html.erb within layouts/admin (6.1ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-06-22 15:07:01 +0200
+  Processing by AdminsController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-06-22 15:07:01 +0200
+  Processing by AdminloginController#index as HTML
+Rendered adminlogin/index.html.erb within layouts/admin (5.2ms)
+Completed 200 OK in 7ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2011-06-22 15:07:07 +0200
+  Processing by AdminloginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mTOQOhyiWVXVmatRFLmpMJnGQmzxA3SNIYWPtAGD6N4=", "username"=>"test", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAdmin Load (13.7ms)[0m  [1mSELECT `admins`.* FROM `admins` WHERE `admins`.`username` = 'test' AND `admins`.`password` = 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3' LIMIT 1[0m
+  [1m[35mAdmin Load (0.3ms)[0m  SELECT `admins`.* FROM `admins` WHERE `admins`.`username` = 'test' LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 25ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-06-22 15:07:07 +0200
+  Processing by AdminsController#index as HTML
+  [1m[36mLink Load (10.3ms)[0m  [1mSELECT `links`.* FROM `links`[0m
+Rendered admins/index.html.erb within layouts/admin (25.8ms)
+Completed 200 OK in 45ms (Views: 27.7ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-06-22 15:07:14 +0200
+  Processing by PostsController#index as HTML
+Completed   in 4ms
+
+NameError (undefined local variable or method `checkLogin' for #<PostsController:0xa492f8c>):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-06-22 15:07:48 +0200
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.9ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/admin (55.7ms)
+Completed 200 OK in 74ms (Views: 62.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:07:48 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:07:48 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/posts/delete?id=3" for 127.0.0.1 at 2011-06-22 15:12:13 +0200
+  Processing by PostsController#delete as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 3 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.3ms)[0m  [1mDELETE FROM `posts` WHERE `posts`.`id` = 3[0m
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/posts?notice=Post+is+successfully+deleted.
+Completed 302 Found in 16ms
+
+
+Started GET "/posts?notice=Post+is+successfully+deleted." for 127.0.0.1 at 2011-06-22 15:12:13 +0200
+  Processing by PostsController#index as HTML
+  Parameters: {"notice"=>"Post is successfully deleted."}
+  [1m[36mPost Load (1.1ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/admin (47.6ms)
+Completed 200 OK in 90ms (Views: 49.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:12:13 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:12:13 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/posts/delete?id=8" for 127.0.0.1 at 2011-06-22 15:13:08 +0200
+  Processing by PostsController#delete as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 8 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM `posts` WHERE `posts`.`id` = 8
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts?alert=Post+is+successfully+deleted.
+Completed 302 Found in 50ms
+
+
+Started GET "/posts?alert=Post+is+successfully+deleted." for 127.0.0.1 at 2011-06-22 15:13:09 +0200
+  Processing by PostsController#index as HTML
+  Parameters: {"alert"=>"Post is successfully deleted."}
+  [1m[35mPost Load (0.6ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/admin (54.2ms)
+Completed 200 OK in 66ms (Views: 57.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:13:09 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:13:09 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-06-22 15:13:23 +0200
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/admin (52.8ms)
+Completed 200 OK in 63ms (Views: 55.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:13:23 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:13:24 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/posts/delete?id=12" for 127.0.0.1 at 2011-06-22 15:13:54 +0200
+  Processing by PostsController#delete as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 12 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.5ms)[0m  DELETE FROM `posts` WHERE `posts`.`id` = 12
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts?notice=Post+is+successfully+deleted.
+Completed 302 Found in 22ms
+
+
+Started GET "/posts?notice=Post+is+successfully+deleted." for 127.0.0.1 at 2011-06-22 15:13:54 +0200
+  Processing by PostsController#index as HTML
+  Parameters: {"notice"=>"Post is successfully deleted."}
+  [1m[35mPost Load (1.0ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/admin (47.8ms)
+Completed 200 OK in 59ms (Views: 49.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:13:54 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:13:54 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-06-22 15:15:58 +0200
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/admin (46.9ms)
+Completed 200 OK in 57ms (Views: 48.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:15:58 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:15:59 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/posts/delete?id=7" for 127.0.0.1 at 2011-06-22 15:16:03 +0200
+  Processing by PostsController#delete as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 7 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM `posts` WHERE `posts`.`id` = 7
+  [1m[36mSQL (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 22ms
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-06-22 15:16:03 +0200
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.7ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/admin (54.7ms)
+Completed 200 OK in 68ms (Views: 58.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:16:04 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:16:04 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-06-22 15:16:30 +0200
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/admin (42.9ms)
+Completed 200 OK in 52ms (Views: 44.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:16:30 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:16:31 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-06-22 15:16:32 +0200
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.5ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/admin (54.6ms)
+Completed 200 OK in 69ms (Views: 58.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:16:32 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:16:32 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-06-22 15:16:47 +0200
+  Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Rendered posts/index.html.erb within layouts/admin (43.3ms)
+Completed 200 OK in 53ms (Views: 45.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:16:48 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:16:48 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/posts/delete?id=5" for 127.0.0.1 at 2011-06-22 15:17:13 +0200
+  Processing by PostsController#delete as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.3ms)[0m  SELECT `posts`.* FROM `posts` WHERE `posts`.`id` = 5 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM `posts` WHERE `posts`.`id` = 5
+  [1m[36mSQL (0.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 19ms
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-06-22 15:17:13 +0200
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.6ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/admin (95.3ms)
+Completed 200 OK in 107ms (Views: 97.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:17:13 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:17:13 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 15:30:34 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.4ms)
+Rendered site/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 3534ms (Views: 13.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 15:30:42 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"jkh"}
+  [1m[35mPost Load (0.4ms)[0m  select * from posts where title like '%jkh%' order by publication_date desc
+Rendered search/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 24ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 15:30:45 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.5ms)
+Rendered site/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 3866ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 15:30:52 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (1.7ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Rendered search/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 65ms (Views: 23.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/images/nopostimage.png" for 127.0.0.1 at 2011-06-22 15:30:52 +0200
+
+ActionController::RoutingError (No route matches "/images/nopostimage.png"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/images/nopostimage.png" for 127.0.0.1 at 2011-06-22 15:30:53 +0200
+
+ActionController::RoutingError (No route matches "/images/nopostimage.png"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 15:30:59 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.1ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.7ms)
+Rendered site/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 3199ms (Views: 15.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 15:31:34 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.4ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Rendered shared/_ads.html.erb (0.6ms)
+Rendered search/index.html.erb within layouts/application (35.0ms)
+Completed   in 79ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.[]):
+    49:   <%
+    50:   i=0
+    51:   while i<4 do
+    52:     v=@yt[i]
+    53:     i+=1
+    54:     %>
+    55:     <td><span class="video-title"><%= v[:title]  %></span></td>
+  app/views/search/index.html.erb:52:in `_app_views_search_index_html_erb__316995308_90289180__524982606'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (19.9ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 15:32:02 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.3ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Rendered shared/_ads.html.erb (0.5ms)
+Rendered search/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 2986ms (Views: 20.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 15:32:24 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"Are we"}
+  [1m[35mPost Load (0.7ms)[0m  select * from posts where title like '%Are we%' order by publication_date desc
+Rendered search/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 4251ms (Views: 13.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 15:32:33 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.6ms)
+Rendered site/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 1754ms (Views: 15.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 15:33:38 +0200
+  Processing by SiteController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  select * from posts order by publication_date desc limit 12
+Rendered shared/_ads.html.erb (1.4ms)
+Rendered site/index.html.erb within layouts/application (41.5ms)
+Completed 200 OK in 5447ms (Views: 45.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-06-22 15:33:49 +0200
+  Processing by AdminsController#index as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-06-22 15:33:49 +0200
+  Processing by AdminloginController#index as HTML
+Rendered adminlogin/index.html.erb within layouts/admin (5.7ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login/auth" for 127.0.0.1 at 2011-06-22 15:33:56 +0200
+  Processing by AdminloginController#auth as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CBEiWYqqB4uvCprnu3O/YznesqdesqpTQrWDrwW9js4=", "username"=>"test", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT `admins`.* FROM `admins` WHERE `admins`.`username` = 'test' AND `admins`.`password` = 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3' LIMIT 1[0m
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT `admins`.* FROM `admins` WHERE `admins`.`username` = 'test' LIMIT 1
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 9ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2011-06-22 15:33:56 +0200
+  Processing by AdminsController#index as HTML
+  [1m[36mLink Load (0.1ms)[0m  [1mSELECT `links`.* FROM `links`[0m
+Rendered admins/index.html.erb within layouts/admin (15.0ms)
+Completed 200 OK in 23ms (Views: 16.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2011-06-22 15:34:01 +0200
+  Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT `posts`.* FROM `posts`
+Rendered posts/index.html.erb within layouts/admin (47.5ms)
+Completed 200 OK in 91ms (Views: 49.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:34:02 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/images/?1308732574" for 127.0.0.1 at 2011-06-22 15:34:02 +0200
+
+ActionController::RoutingError (No route matches "/images"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/admins/account" for 127.0.0.1 at 2011-06-22 15:34:04 +0200
+  Processing by AdminsController#account as HTML
+Rendered admins/account.html.erb within layouts/admin (37.9ms)
+Completed 200 OK in 40ms (Views: 39.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/logout" for 127.0.0.1 at 2011-06-22 15:34:06 +0200
+  Processing by AdminsController#logout as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at 2011-06-22 15:34:06 +0200
+  Processing by AdminloginController#index as HTML
+Rendered adminlogin/index.html.erb within layouts/admin (5.7ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 15:34:10 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.7ms)
+Rendered site/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 3656ms (Views: 18.3ms | ActiveRecord: 0.2ms)

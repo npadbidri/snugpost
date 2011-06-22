@@ -30,14 +30,14 @@ class ContactController < ApplicationController
       data=params
        if Emailer.deliver_contact(data)
         return if request.xhr?
-          setInfoMsg("Your email has been successfully sent.")
+        flash[:notice]="Your email has been successfully sent."
          redirect_to(:controller=>'site')
        else
-         setErrorMsg("There's been an error while sending you email.")
+         flash[:alert]="There's been an error while sending you email."
          redirect_to(:controller=>'site')
        end      
     else
-      setErrorMsg(error)
+      flash[:alert]=error
       redirect_to(:controller=>'contact')
     end
   end

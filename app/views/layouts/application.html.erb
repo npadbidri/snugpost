@@ -33,12 +33,18 @@
                <%= link_to "Contact Us","contact",{:class=>"menu",:title=>"Contact Us"} %>
              </div>
 	   </div>
-          <% if (has_error_msg()) %>
-            <ul><li class="error"><%=  getErrorMsg() %></li></ul>
+        <% if (alert!=nil) %>
+        <div class="response-msg error ui-corner-all">
+            <span>Error</span>
+            <%=  alert %>
+        </div>
          <%
-            end
-            if (has_info_msg()) %>
-         <ul><li class="success"><%= getInfoMsg() %></li></ul>
+         end
+            if (notice!=nil) %>
+            <div class="response-msg success ui-corner-all">
+                <span>Information</span>
+                <%= notice %>
+            </div>
          <% end %>
          <%= yield %>
 	</div>

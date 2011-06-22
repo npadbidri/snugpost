@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   layout 'admin'
-  before_filter:checkLogin  
+  before_filter:checkAdminLogin
 
   def logout
     adminlogout()
@@ -21,11 +21,11 @@ class AdminsController < ApplicationController
   def saveaccount
     @admin=getLoggedAdmin()
     if Admin.can_save_info(params[:username],@admin.id)
-      setErrorMsg("There's already an administrator with the same given username.")
+      flash[:alert]="There's already an administrator with the same given username."
       redirect_to(:controller=>"admins",:action=>"account")
     else
      if (params[:oldpassword]!="" && Digest::SHA1.hexdigest(params[:oldpassword])!=@admin.password)
-      setErrorMsg("Old password is incorrect.")
+       flash[:alert]="Old password is incorrect."
       redirect_to(:controller=>"admins",:action=>"account")
      else
        if params[:password]!=""
@@ -34,7 +34,7 @@ class AdminsController < ApplicationController
        @admin.username=params[:username]
        Admin.update(@admin.id,:username => @admin.username,:password=>@admin.password)
        adminlogin(@admin.username)
-       setInfoMsg("Your information is successfully saved.")
+       flash[:notice]="Your information is successfully saved."
        redirect_to(:controller=>"admins",:action=>"show")
      end
     end
@@ -63,11 +63,11 @@ class AdminsController < ApplicationController
   # POST /admins.xml
   def create
     if Admin.admin_exists(params[:username])
-      setErrorMsg("There's already an administrator with the same given username.")
+      flash[:alert]="There's already an administrator with the same given username."
       redirect_to(:controller=>"admins",:action=>"new")
     end
     Admin.create(:username=>params[:username],:password=>Digest::SHA1.hexdigest(params[:password]))
-    setInfoMsg("Administrator is saved successfully.")
+    flash[:notice]="Administrator is saved successfully."
     redirect_to(:controller=>"admins",:action=>"show")
   end
 
@@ -76,14 +76,14 @@ class AdminsController < ApplicationController
   def update
     @admin = Admin.find(params[:id])
     if Admin.can_save_info(params[:username],@admin.id)
-      setErrorMsg("There's already an administrator with the same given username.")
+      flash[:alert]="There's already an administrator with the same given username."
       redirect_to(:controller=>"admins",:action=>"edit",:id=>@admin.id)
     end
     if (params[:password]!="")
       @admin.password=Digest::SHA1.hexdigest(params[:password])
     end
     Admin.update(@admin.id,:username => @admin.username,:password=>@admin.password)
-    setInfoMsg("Administrator is saved successfully.")
+    flash[:notice]="Administrator is saved successfully."
     redirect_to(:controller=>"admins",:action=>"show")
   end
 
@@ -93,10 +93,10 @@ class AdminsController < ApplicationController
     @l=getLoggedAdmin()
     @admin = Admin.find(params[:id])
     if @l.id==@admin.id
-      setErrorMsg("You cannot delete yourself")
+      flash[:alert]="You cannot delete yourself"
     else
       @admin.destroy
-      setInfoMsg("Administrator has been deleted successfully.")
+      flash[:notice]="Administrator has been deleted successfully."
     end
     redirect_to(:controller=>"admins",:action=>"show")
   end

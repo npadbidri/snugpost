@@ -1,11 +1,18 @@
 <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
 <div id="login" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-   <% if (has_error_msg()) %>
-   <div class="response-msg error ui-corner-all">
-        <span>Error login</span>
-        <%=  getErrorMsg() %>
-    </div>
-   <% end %>
+ <% if (alert!=nil) %>
+        <div class="response-msg error ui-corner-all">
+            <span>Error</span>
+            <%=  alert %>
+        </div>
+         <%
+         end
+            if (notice!=nil) %>
+            <div class="response-msg success ui-corner-all">
+                <span>Information</span>
+                <%= notice %>
+            </div>
+         <% end %>
    <%= form_tag({:controller => "adminlogin", :action => "auth"}, :method => "post",:id=>"frmlogin") do %>
         <ul>
             <li>

@@ -42,18 +42,18 @@ return "check_none"; }
     <h2>List of all posts</h2>
     <span>Here you can view,and delete all posts in the database.</span>
 </div>
-<div class="hastable">
-        <% if (has_error_msg()) %>
+<div class="hastable">  
+        <% if (alert!=nil) %>
         <div class="response-msg error ui-corner-all">
             <span>Error</span>
-            <%=  getErrorMsg() %>
+            <%=  alert %>
         </div>
          <%
          end
-            if (has_info_msg()) %>
+            if (notice!=nil) %>
             <div class="response-msg success ui-corner-all">
                 <span>Information</span>
-                <%= getInfoMsg() %>
+                <%= notice %>
             </div>
          <% end %>
         <form name="myform" class="pager-form" method="post" action="">

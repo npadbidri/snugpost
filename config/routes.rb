@@ -1,7 +1,9 @@
 Snugpost::Application.routes.draw do
+  devise_for :users
+
   #resources :posts
 
- # resources :links
+  #resources :links
   #resources :admins
   match 'admin' => 'admins#index'  
   match 'login' => 'adminlogin#index'

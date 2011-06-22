@@ -1,28 +1,18 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-    def checkLogin
-      if (!isAdminLogged())
-         redirect_to(:controller => "adminlogin")
+    def checkAdminLogin
+      if !isAdminLogged
+        redirect_to(:controller => "adminlogin")
       end
+     # if user_signed_in?
+      #  if (current_user.is_admin==0)
+        #   redirect_to(:controller => "adminlogin")
+       # end
+      #else
+       # redirect_to(:controller => "adminlogin")
+      #end
     end
-    def getErrorMsg()
-    result = session[:error]
-    session[:error]=nil;
-    return result
-  end
-  def setErrorMsg(msg)
-    session[:error]=msg;
-    return msg
-  end
-  def getInfoMsg()
-    result = session[:info]
-    session[:info]=nil;
-    return result
-  end
-  def setInfoMsg(msg)
-    session[:info]=msg;
-    return msg
-  end
+    
   # za admin dio
   def adminlogin(username)
     @t=Admin.find_by_username(username)
