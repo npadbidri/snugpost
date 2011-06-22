@@ -2,6 +2,7 @@
 require File.expand_path('../application', __FILE__)
 
 SITE_EMAIL= 'pasicmesud@gmail.com'
+PER_PAGE=10       
 # Initialize the rails application
 Snugpost::Application.initialize!
 ActionMailer::Base.delivery_method = :sendmail

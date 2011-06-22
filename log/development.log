@@ -16610,3 +16610,934 @@ Started GET "/" for 127.0.0.1 at 2011-06-22 15:34:10 +0200
 Rendered shared/_ads.html.erb (0.7ms)
 Rendered site/index.html.erb within layouts/application (14.0ms)
 Completed 200 OK in 3656ms (Views: 18.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 15:57:30 +0200
+  Processing by SiteController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  select * from posts order by publication_date desc limit 12
+Rendered shared/_ads.html.erb (0.4ms)
+Rendered site/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 4401ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 15:59:20 +0200
+  Processing by SiteController#index as HTML
+Completed   in 12ms
+
+NameError (uninitialized constant Post::PER_PAGE):
+  app/models/post.rb:3:in `<class:Post>'
+  app/models/post.rb:1:in `<top (required)>'
+  app/controllers/site_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 16:00:43 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.5ms)
+Rendered site/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 3453ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 16:00:55 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.3ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Rendered shared/_ads.html.erb (0.6ms)
+Rendered search/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 2400ms (Views: 22.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 16:06:35 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+Completed   in 9ms
+
+NameError (undefined local variable or method `params' for #<Class:0xab816a4>):
+  app/models/post.rb:8:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.3ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2011-06-22 16:08:45 +0200
+  Processing by SearchController#index as HTML
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+Completed   in 11ms
+
+NameError (undefined local variable or method `params' for #<Class:0xa501658>):
+  app/models/post.rb:8:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.9ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:9)
+
+
+Started GET "/search" for 127.0.0.1 at 2011-06-22 16:09:30 +0200
+  Processing by SearchController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+Completed   in 9ms
+
+NameError (undefined local variable or method `params' for #<Class:0xa3f3144>):
+  app/models/post.rb:8:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (33.5ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.4ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2011-06-22 16:10:09 +0200
+  Processing by SearchController#index as HTML
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+Completed   in 8ms
+
+NoMethodError (undefined method `paginate_by_sql' for #<Class:0xab84278>):
+  app/models/post.rb:8:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 16:10:13 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.2ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.5ms)
+Rendered site/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 22689ms (Views: 15.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 16:10:41 +0200
+  Processing by SiteController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  select * from posts order by publication_date desc limit 12
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:9)
+Rendered site/index.html.erb within layouts/application (1.2ms)
+Completed   in 60381ms
+
+ActionView::Template::Error (MySQL server has gone away):
+    25:   %>
+    26:   <td class="post-cell<%= "-last" if i>2  %>">
+    27:   <div class="post">
+    28:     <div class="post-title"><%= raw(row.title) %></div>
+    29:       <div class="post-image">
+    30:        <% if !row.image.empty? %>
+    31:           <%= image_tag row.image %>
+  app/views/site/index.html.erb:28:in `_app_views_site_index_html_erb__596304364_85318180__524982606'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 16:11:41 +0200
+
+Mysql::Error (Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2)):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.4ms)
+DEPRECATION WARNING: ActionMailer::Base.default_content_type=value is deprecated, use default :content_type => value instead. (called from <top (required)> at /var/www/snugpost/config/environment.rb:9)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 16:13:52 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (60.6ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (19.6ms)
+Rendered site/index.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 18044ms (Views: 103.7ms | ActiveRecord: 60.6ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2011-06-22 16:14:11 +0200
+
+ActionController::RoutingError (No route matches "/images/favicon.ico"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/favicon.ico" for 127.0.0.1 at 2011-06-22 16:14:11 +0200
+
+ActionController::RoutingError (No route matches "/images/favicon.ico"):
+  
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 16:15:15 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 7ms
+
+ArgumentError (wrong number of arguments (3 for 2)):
+  app/models/post.rb:8:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (49.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (135.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 16:16:53 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 6ms
+
+ArgumentError (parameter hash expected):
+  app/models/post.rb:8:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 16:21:55 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (1.2ms)[0m  SELECT `posts`.* FROM `posts`
+Completed   in 113ms
+
+TypeError (can't convert nil into Array):
+  app/models/post.rb:9:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 16:22:41 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 7ms
+
+WillPaginate::InvalidPage (0 given as value, which translates to '0' as page number):
+  app/models/post.rb:9:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.8ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 16:22:56 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Completed   in 9ms
+
+TypeError (can't convert nil into Array):
+  app/models/post.rb:9:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.3ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2011-06-22 16:24:07 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+Completed   in 10ms
+
+TypeError (can't convert nil into Array):
+  app/models/post.rb:9:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (29.7ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 16:24:10 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.7ms)
+Rendered site/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 3377ms (Views: 17.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:24:33 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.5ms)[0m  SELECT `posts`.* FROM `posts`
+Completed   in 8ms
+
+TypeError (can't convert nil into Array):
+  app/models/post.rb:9:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 16:25:33 +0200
+  Processing by SiteController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mselect * from posts order by publication_date desc limit 12[0m
+Rendered shared/_ads.html.erb (0.7ms)
+Rendered site/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 3493ms (Views: 19.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:25:37 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 6ms
+
+ArgumentError (parameter hash expected):
+  app/models/post.rb:8:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.7ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.5ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:28:00 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 6ms
+
+SyntaxError (/var/www/snugpost/app/models/post.rb:8: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...e like ?', "%#{key}%"],:page => page
+...                               ^):
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.8ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:35:17 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (1.7ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Completed   in 28ms
+
+NoMethodError (undefined method `page' for #<Array:0xb6f0620>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.6ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:35:20 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.5ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 56ms
+
+NoMethodError (undefined method `page' for #<Array:0xbc43320>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-06-22 16:35:24 +0200
+  Processing by SiteController#index as HTML
+  [1m[35mPost Load (0.3ms)[0m  select * from posts order by publication_date desc limit 12
+Rendered shared/_ads.html.erb (0.5ms)
+Rendered site/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 1810ms (Views: 24.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:35:31 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.3ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 56ms
+
+NoMethodError (undefined method `page' for #<Array:0xa7813b0>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.6ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:40:38 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.3ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Completed   in 26ms
+
+NoMethodError (undefined method `page' for #<Array:0xb59c904>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.4ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:40:38 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.3ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 55ms
+
+NoMethodError (undefined method `page' for #<Array:0xaa9dc10>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:40:39 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.3ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Completed   in 26ms
+
+NoMethodError (undefined method `page' for #<Array:0xb7ab6a0>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:41:03 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.3ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 27ms
+
+NoMethodError (undefined method `page' for #<Array:0xb3baaf0>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.6ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:41:04 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.3ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Completed   in 27ms
+
+NoMethodError (undefined method `page' for #<Array:0xbb3cf44>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:41:04 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.3ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 27ms
+
+NoMethodError (undefined method `page' for #<Array:0xb497428>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.4ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.6ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:41:05 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.3ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Completed   in 27ms
+
+NoMethodError (undefined method `page' for #<Array:0xbbb56b0>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.5ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:41:05 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.2ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 25ms
+
+NoMethodError (undefined method `page' for #<Array:0xb4f14f0>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.7ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:41:05 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.4ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Completed   in 26ms
+
+NoMethodError (undefined method `page' for #<Array:0xbc05138>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.8ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:41:05 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.3ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 24ms
+
+NoMethodError (undefined method `page' for #<Array:0xb53077c>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.6ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:41:06 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.4ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Completed   in 63ms
+
+NoMethodError (undefined method `page' for #<Array:0xa245f7c>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:41:06 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.3ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 24ms
+
+NoMethodError (undefined method `page' for #<Array:0xb57af70>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:41:07 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.4ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Completed   in 53ms
+
+NoMethodError (undefined method `page' for #<Array:0xa961bbc>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:41:12 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.3ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 25ms
+
+NoMethodError (undefined method `page' for #<Array:0xb75c974>):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:43:49 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.6ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Completed   in 11ms
+
+NameError (undefined local variable or method `page' for #<SearchController:0xb3e7668>):
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:44:02 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.4ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 25ms
+
+NoMethodError (undefined method `page' for #<Array:0xbbc5a24>):
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.9ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:44:04 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.5ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Completed   in 25ms
+
+NoMethodError (undefined method `page' for #<Array:0xb4fe18c>):
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:44:04 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.5ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 26ms
+
+NoMethodError (undefined method `page' for #<Array:0xbc1d990>):
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:44:05 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.4ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Completed   in 24ms
+
+NoMethodError (undefined method `page' for #<Array:0xb543a84>):
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 16:44:05 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.4ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Completed   in 55ms
+
+NoMethodError (undefined method `page' for #<Array:0xa762488>):
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:10:29 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 5ms
+
+ArgumentError (wrong number of arguments (3 for 2)):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:10:42 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 5ms
+
+ArgumentError (parameter hash expected):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:10:43 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 6ms
+
+ArgumentError (parameter hash expected):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.8ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:10:43 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 5ms
+
+ArgumentError (parameter hash expected):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.9ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:10:44 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 6ms
+
+ArgumentError (parameter hash expected):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:10:44 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 5ms
+
+ArgumentError (parameter hash expected):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:11:36 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 6ms
+
+ArgumentError (parameter hash expected):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.4ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:11:37 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 6ms
+
+ArgumentError (parameter hash expected):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:11:38 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 6ms
+
+ArgumentError (parameter hash expected):
+  app/models/post.rb:6:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.6ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:12:17 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+Completed   in 10ms
+
+TypeError (can't convert nil into Array):
+  app/models/post.rb:8:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:12:18 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Completed   in 7ms
+
+TypeError (can't convert nil into Array):
+  app/models/post.rb:8:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (36.6ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:12:19 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT `posts`.* FROM `posts`
+Completed   in 8ms
+
+TypeError (can't convert nil into Array):
+  app/models/post.rb:8:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.7ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:12:19 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.4ms)[0m  [1mSELECT `posts`.* FROM `posts`[0m
+Completed   in 8ms
+
+TypeError (can't convert nil into Array):
+  app/models/post.rb:8:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.5ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:14:48 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+Completed   in 5ms
+
+SyntaxError (/var/www/snugpost/app/models/post.rb:6: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+...blication_date desc"], :page => params[:page], :per_page => ...
+...                               ^
+/var/www/snugpost/app/models/post.rb:6: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+... => params[:page], :per_page => 20
+...                               ^):
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.6ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (38.9ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:17:50 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+Completed   in 8ms
+
+NoMethodError (undefined method `add_limit!' for #<Class:0xbb69634>):
+  app/models/post.rb:7:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.5ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2011-06-22 17:20:53 +0200
+  Processing by SearchController#index as HTML
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+Completed   in 7ms
+
+NoMethodError (undefined method `add_limit!' for #<Class:0xb5758b8>):
+  app/models/post.rb:7:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.2ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:21:18 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+Completed   in 40ms
+
+NoMethodError (undefined method `add_limit!' for #<Class:0xb7eedb0>):
+  app/models/post.rb:7:in `search_by_keyword'
+  app/controllers/search_controller.rb:3:in `index'
+
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.4ms)
+Rendered /home/cronim/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.5ms)
+
+
+Started GET "/search?search=A" for 127.0.0.1 at 2011-06-22 17:24:14 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"search"=>"A"}
+  [1m[36mPost Load (0.4ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Rendered shared/_ads.html.erb (0.5ms)
+Rendered search/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 3959ms (Views: 16.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/search?page=2&search=A" for 127.0.0.1 at 2011-06-22 17:24:31 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"page"=>"2", "search"=>"A"}
+  [1m[35mPost Load (0.3ms)[0m  select * from posts where title like '%A%' order by publication_date desc
+Rendered shared/_ads.html.erb (0.5ms)
+Rendered search/index.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 4198ms (Views: 45.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/search?page=2&search=A" for 127.0.0.1 at 2011-06-22 17:24:51 +0200
+  Processing by SearchController#index as HTML
+  Parameters: {"page"=>"2", "search"=>"A"}
+  [1m[36mPost Load (0.3ms)[0m  [1mselect * from posts where title like '%A%' order by publication_date desc[0m
+Rendered shared/_ads.html.erb (0.5ms)
+Rendered search/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 1742ms (Views: 16.1ms | ActiveRecord: 0.3ms)
