@@ -2,31 +2,25 @@
 <div id="login" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
  <% if (alert!=nil) %>
         <div class="response-msg error ui-corner-all">
-            <span>Error</span>
+            <span>Error: </span>
             <%=  alert %>
         </div>
          <%
          end
             if (notice!=nil) %>
             <div class="response-msg success ui-corner-all">
-                <span>Information</span>
+                <span>Information: </span>
                 <%= notice %>
             </div>
          <% end %>
    <%=  form_tag({:controller => "admins", :action => "saveaccount"}, :method => "post",:id=>"frmaccount") do %>
         <ul>
             <li>
-              <%= label_tag :username, "Username",:class=>"desc" %>
+              <%= label_tag :email, "Email",:class=>"desc" %>
                 <div>
-                    <%= text_field_tag(:username,@admin.username,:class=>"field text full required",:id=>"username") %>
+                    <%= text_field_tag(:email,@admin.email,:class=>"field text full required",:id=>"email") %>
                 </div>
-            </li>
-            <li>
-              <%= label_tag :oldpassword, "Old password",:class=>"desc" %>
-              <div>
-                <%= password_field_tag(:oldpassword,"", :class=>"field text full",:id=>"oldpassword") %>
-              </div>
-            </li>
+            </li>            
             <li>
               <%= label_tag :password, "New password",:class=>"desc" %>
               <div>
@@ -51,11 +45,7 @@
 <script type="text/javascript">
   function _submit()
   {
-    if ($("#password").val()!="" && $("#oldpassword").val()=="")
-    {
-      alert("You must enter old password.");
-      return false;
-    }
+   
     if ($("#password").val()!=$("#confirmedpassword").val())
     {
       alert("Confirmed password must be same as new password.");

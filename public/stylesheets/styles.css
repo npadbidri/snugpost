@@ -55,6 +55,36 @@ body
 	font-style:italic;
 	padding-left:5px;
 }
+.success
+{
+    background: url("../images/success.gif") no-repeat #d8f18e;
+    background-position: center left;
+    border-top:1px solid #95c800;
+    border-bottom:1px solid #95c800;
+    width:auto;
+    display: block;
+    line-height: 25px;
+    padding-left: 25px;
+    color:#333;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 30px;
+}
+.error
+{
+    background: url("../images/error.gif") no-repeat #f18976;
+    background-position: center left;
+    border-top:1px solid #b15050;
+    border-bottom:1px solid #b15050;
+    width:auto;
+    display: block;
+    line-height: 25px;
+    padding-left: 25px;
+    color:#333;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 30px;
+}
 li.success
 {
     background: url("../images/success.gif") no-repeat #d8f18e;
@@ -253,4 +283,42 @@ a.post-links
     float: left;
     margin-top: 5px;
     margin-right: 5px;
+}
+.pagination
+{
+    display: block;
+    font-size:14px;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.pagination a
+{
+    color:#36CF7E;
+    text-decoration: none;
+}
+.pagination .current
+{
+    color:#F86900;
+}
+.pagination .disabled
+{
+    color:#ccc;
+}
+
+.logged-user
+{
+    display: block;
+    text-align: right;
+    float: right;
+}
+ul.user-menu
+{
+    list-style: none;
+    display: inline-block;
+}
+ul.user-menu li{
+    list-style: none;
+    display: inline-block;
+    margin-left: 5px;
 }

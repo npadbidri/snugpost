@@ -16,9 +16,9 @@
    <%=  form_tag({:controller => "admins", :action => "create"}, :method => "post",:id=>"frmaccount") do %>  
         <ul>
             <li>
-              <%= label_tag :username, "Username",:class=>"desc" %>
+              <%= label_tag :email, "Email",:class=>"desc" %>
                 <div>
-                    <%= text_field_tag(:username,"",:class=>"field text full required",:id=>"username") %>
+                    <%= text_field_tag(:email,"",:class=>"field text full email required",:id=>"email") %>
                 </div>
             </li>
             <li>

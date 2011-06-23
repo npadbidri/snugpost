@@ -61,7 +61,8 @@ return "check_none"; }
         <thead>
         <tr>
           <th>ID</th>
-            <th>Username</th>
+            <th>Email</th>
+            <th>Last login</th>
             <th style="width:128px">Options</th>
         </tr>
         </thead>
@@ -69,7 +70,8 @@ return "check_none"; }
         <% @rows.each do |row| %>
         <tr>
             <td><%= row.id %></td>
-            <td><%= row.username %></td>
+            <td><%= row.email %></td>
+            <td><%= row.last_sign_in_at %></td>
             <td>
                 <a class="btn_no_text btn ui-state-default ui-corner-all tooltip" title="Edit" href="<%= url_for(:controller => 'admins',:action=>"edit",:id=>row.id) %>">
                     <span class="ui-icon ui-icon-wrench">Edit</span>

@@ -1,32 +1,39 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-    def checkAdminLogin
-      if !isAdminLogged
-        redirect_to(:controller => "adminlogin")
+
+  def resource_name
+    :user
+  end
+ 
+  def resource
+    @resource ||= User.new
+  end
+ 
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
+  def checkAdminLogin
+      if user_signed_in?
+        if (current_user.is_admin==0)
+          flash[:alert]="You must be logged in as an Administrator"
+           redirect_to(user_session_path)           
+        end
+      else
+        flash[:alert]="You must be logged in as an Administrator"
+        redirect_to(user_session_path)
       end
-     # if user_signed_in?
-      #  if (current_user.is_admin==0)
-        #   redirect_to(:controller => "adminlogin")
-       # end
-      #else
-       # redirect_to(:controller => "adminlogin")
-      #end
-    end
-    
+  end
   # za admin dio
-  def adminlogin(username)
-    @t=Admin.find_by_username(username)
-    session[:AdminData]=@t
-  end
-  def adminlogout()
-    session[:AdminData]=nil
-  end
+
   def isAdminLogged()    
-    t=session[:AdminData]
-    return (t!=nil)
+    if user_signed_in?
+       return current_user.is_admin==1
+    else
+      return false
+    end
   end
   def getLoggedAdmin()
-    session[:AdminData]   
+    current_user
   end
 end
 require 'rexml/document'

@@ -15,8 +15,23 @@
   <%= javascript_include_tag "utils.js" %>
 </head>
 <body class="pg_body">
-   <div class="content">
+   <div class="content">     
 	   <div class="header">
+             <%
+     if user_signed_in?
+       %>
+     <div class="logged-user">
+       <ul class="user-menu">
+         <li>Welcome, <%= current_user.email %> </li>
+         <li> <%= link_to "Sign out", destroy_user_session_path %></li>
+         <% if (current_user.is_admin==1) %>
+         <li> <%= link_to "Administration",:controller => "admins", :action => "index"  %></li>
+         <% end %>
+       </ul>
+      </div>
+      <%
+      end
+      %>
 	   		<div class="search-bar">
 		   		<form method="get" action="<%= root_url %>search" id="frmsearch" >
 		   			<input type="text" id="search" name="search" value="search...">
@@ -35,14 +50,14 @@
 	   </div>
         <% if (alert!=nil) %>
         <div class="response-msg error ui-corner-all">
-            <span>Error</span>
+            <span>Error: </span>
             <%=  alert %>
         </div>
          <%
          end
             if (notice!=nil) %>
             <div class="response-msg success ui-corner-all">
-                <span>Information</span>
+                <span>Information: </span>
                 <%= notice %>
             </div>
          <% end %>

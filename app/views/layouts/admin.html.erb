@@ -46,14 +46,14 @@
         </div>
     </div>
    <% else
-   @admin=getLoggedAdmin()
+   @admin=current_user
    %>
      <div id="page-header">
             <div id="page-header-wrapper">
                 <div id="top">
                     <div id="top"><a title="Snugpost administration" class="logo" href="<%= url_for(:action => 'index', :controller => 'admins') %>"></a>
                     <div class="welcome">
-                        <span class="note">Welcome, <%= @admin.username %></span>
+                        <span class="note">Welcome, <%= @admin.email %></span>
                         <a class="btn ui-state-default ui-corner-all" href="<%= url_for(:action => 'account', :controller => 'admins') %>">
                             <span class="ui-icon ui-icon-person"></span>
                             My account

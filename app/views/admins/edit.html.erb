@@ -2,14 +2,14 @@
 <div id="login" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
  <% if (alert!=nil) %>
         <div class="response-msg error ui-corner-all">
-            <span>Error</span>
+            <span>Error: </span>
             <%=  alert %>
         </div>
          <%
          end
             if (notice!=nil) %>
             <div class="response-msg success ui-corner-all">
-                <span>Information</span>
+                <span>Information: </span>
                 <%= notice %>
             </div>
          <% end %>
@@ -17,9 +17,9 @@
   <input type="hidden" id="id" name="id" value="<%= @admin.id %>" />
         <ul>
             <li>
-              <%= label_tag :username, "Username",:class=>"desc" %>
+              <%= label_tag :email, "Email",:class=>"desc" %>
                 <div>
-                    <%= text_field_tag(:username,@admin.username,:class=>"field text full required",:id=>"username") %>
+                    <%= text_field_tag(:email,@admin.email,:class=>"field text full email required",:id=>"Email") %>
                 </div>
             </li>           
             <li>

@@ -2,38 +2,43 @@
 <div id="login" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
  <% if (alert!=nil) %>
         <div class="response-msg error ui-corner-all">
-            <span>Error</span>
+            <span>Error: </span>
             <%=  alert %>
         </div>
          <%
          end
             if (notice!=nil) %>
             <div class="response-msg success ui-corner-all">
-                <span>Information</span>
+                <span>Information: </span>
                 <%= notice %>
             </div>
          <% end %>
-   <%= form_tag({:controller => "adminlogin", :action => "auth"}, :method => "post",:id=>"frmlogin") do %>
-        <ul>
-            <li>
-              <%= label_tag :username, "Username",:class=>"desc" %>
-                <div>
-                    <%= text_field_tag(:username,"",:class=>"field text full required",:id=>"username") %>
-                </div>
-            </li>
-            <li>
-              <%= label_tag :password, "Password",:class=>"desc" %>
-              <div>
-                <%= password_field_tag(:password,"", :class=>"field text full required",:id=>"password") %>
-              </div>
-            </li>
-            <li class="buttons">
-                <div>
-                  <%= submit_tag "Login",:class=>"ui-state-default ui-corner-all float-right ui-button" %>
-                </div>
-            </li>
-        </ul>
-    <% end %>
+  <%= form_for("user", :url => user_session_path,:id=>"frmlogin",:html => {:id => "frmlogin"} ) do |f| %>
+  <ul>
+    <li>
+  <%= f.label :email %>
+    </li>
+    <li>
+  <%= f.text_field :email,:class=>"field email text full required" %>
+   </li>
+      <li>
+  <%= f.label :password %>
+     </li>
+   <li>
+  <%= f.password_field :password,:class=>"field text full required" %>
+     </li>
+     <li>
+  <%= f.check_box :remember_me %>       
+  <%= f.label :remember_me %>
+     </li>
+       <li>
+  <%= f.submit 'Sign in',:class=>"ui-state-default ui-corner-all float-left ui-button" %>
+     </li>
+     <li>
+  <%= link_to "Forgot your password?", new_password_path('user') %>
+       </li>    
+  </ul>
+<% end %>  
 </div>
 </div>
 <script type="text/javascript">

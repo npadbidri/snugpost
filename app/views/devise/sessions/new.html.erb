@@ -1,0 +1,28 @@
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => {:id => "frmlogin"} ) do |f| %>
+   <ul>
+    <li>
+  <%= f.label :email %>
+    </li>
+    <li>
+  <%= f.email_field :email,:class=>"field email text full required" %>
+   </li>
+   <li>
+  <%= f.label :password %>
+     </li>
+     <li>
+  <%= f.password_field :password,:class=>"field text full required" %>
+  </li>
+  <li>
+  <% if devise_mapping.rememberable? -%>
+    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+  <% end -%>
+    </li>
+    <li><%= f.submit "Sign in",:class=>"ui-state-default ui-corner-all float-left ui-button" %></li>
+   </ul>
+<% end %>
+<!--
+<%= render :partial => "devise/shared/links" %>
+-->
+<script type="text/javascript">
+    $("#frmlogin").validate();
+</script>
